@@ -19,7 +19,7 @@ const Header: FC = () => {
     <nav className="navbar is-spaced has-shadow">
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>AppName</Link>
+          <Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>Yagada</Link>
         </div>
 
         <div className="navbar-end">
