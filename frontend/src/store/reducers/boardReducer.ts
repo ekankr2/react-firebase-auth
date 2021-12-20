@@ -29,5 +29,7 @@ export default (state = initialState, action: BoardAction) => {
                 ...state,
                 success: action.payload
             }
+        default:
+            return state
     }
 }

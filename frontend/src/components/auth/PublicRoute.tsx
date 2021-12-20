@@ -12,7 +12,7 @@ const PublicRoute: FC<Props> = ({ component: Component, ...rest }) => {
   const { authenticated } = useSelector((state: RootState) => state.auth);
 
   return(
-    <Route {...rest} render={props => !authenticated ? <Component {...props} /> : <Redirect to="/dashboard" />} />
+    <Route {...rest} render={props => !authenticated ? <Component {...props} /> : <Redirect to="/" />} />
   );
 }
 

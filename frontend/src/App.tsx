@@ -15,6 +15,7 @@ import Loader from './components/UI/Loader';
 import firebase from './firebase/config';
 import { getUserById, setLoading, setNeedVerification } from './store/actions/authActions';
 import { RootState } from './store';
+import BoardRegister from "./components/pages/board/BoardRegister";
 
 const App: FC = () => {
     const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const App: FC = () => {
                 <PublicRoute path="/signin" component={SignIn} exact />
                 <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
                 <PrivateRoute path="/dashboard" component={Dashboard} exact />
+                <PublicRoute path="/register" component={BoardRegister} exact />
             </Switch>
         </BrowserRouter>
     );

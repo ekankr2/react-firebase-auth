@@ -1,7 +1,6 @@
 import {FC, FormEvent, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store";
-import {signin} from "../../../store/actions/authActions";
 import {registerBoard, setError} from "../../../store/actions/boardActions";
 import Input from "../../UI/Input";
 
@@ -59,3 +58,5 @@ const BoardRegister: FC = () => {
         </section>
     )
 }
+
+export default BoardRegister
