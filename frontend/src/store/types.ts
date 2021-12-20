@@ -74,10 +74,14 @@ export interface Board {
     createdAt: any
 }
 
-export interface registerData {
+export interface BoardState{
     title: string,
     content: string,
-    author: string,
+}
+
+export interface registerData{
+    title: string,
+    content: string,
 }
 
 export interface registerAction {
