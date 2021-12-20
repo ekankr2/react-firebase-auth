@@ -75,8 +75,9 @@ export interface Board {
 }
 
 export interface BoardState{
-    title: string,
-    content: string,
+    loading: boolean,
+    error: string,
+    success: string
 }
 
 export interface registerData{
@@ -89,4 +90,4 @@ export interface registerAction {
     payload: Board
 }
 
-export type BoardAction = SetErrorAction | registerAction
+export type BoardAction = SetErrorAction | SetLoadingAction | SetSuccessAction | registerAction
