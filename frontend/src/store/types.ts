@@ -86,14 +86,9 @@ export interface registerData{
     content: string,
 }
 
-interface registerAction {
-    type: typeof REGISTER_BOARD,
-    payload: Board
-}
-
 interface setSubmittedAction {
     type: typeof SET_SUBMITTED
     payload: boolean
 }
 
-export type BoardAction = SetErrorAction | SetLoadingAction | setSubmittedAction | registerAction
+export type BoardAction = SetErrorAction | SetLoadingAction | setSubmittedAction
