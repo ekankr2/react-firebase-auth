@@ -24,9 +24,7 @@ export const registerBoard = (data: registerData, user: User, onError: () => voi
             };
             dispatch(setLoading(true))
             await firebase.firestore().collection('board').add(boardData);
-            dispatch(setSubmitted(true))
-            dispatch(setLoading(false))
-            dispatch(setSubmitted(false))
+            dispatch(submitLoading())
         } catch (err: any) {
             console.log(err)
             onError();
@@ -61,6 +59,23 @@ export const setSubmitted = (success: boolean): ThunkAction<void, RootState, nul
         dispatch({
             type: SET_SUBMITTED,
             payload: success
+        });
+    }
+}
+
+export const submitLoading = (): ThunkAction<void, RootState, null, BoardAction> => {
+    return dispatch => {
+        dispatch({
+            type: SET_SUBMITTED,
+            payload: true
+        });
+        dispatch({
+            type: SET_LOADING,
+            payload: false
+        });
+        dispatch({
+            type: SET_SUBMITTED,
+            payload: false
         });
     }
 }
