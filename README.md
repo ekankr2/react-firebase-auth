@@ -5,7 +5,7 @@
 </p>
 
 ```
-노동의 순간을 일기로 기록하다.
+노동의 순간을 기록하다.
 ```
 
 
@@ -32,48 +32,13 @@
 
 ## 초기 기획
 
-[기획서](https://blog.naver.com/ekankr2/222599146960/)
-
-##  기능 소개
-
-
+[기획서 링크](https://blog.naver.com/ekankr2/222599146960/)
 
 # Issues
 
-* 공공 API CORS policy 오류
-    * [원인 & 해결방법][해결법링크]
-    * [proxy 서버 만들기][프록시링크]
-
-[해결법링크]: https://blog.naver.com/ekankr2/222555509070
-[프록시링크]: https://blog.naver.com/ekankr2/222555499566
-
-
-* Axios(Ajax) returns nothing
-
-    * 원인
-        * Axios(Ajax) 요청은 promise 이다.
-        * 브라우저는 연산이 쉬운 코드를 Stack 영역에서 먼저 실행하고,
-        * 어려운 코드(Promise, Web API 등)는 Queue영역에 저장한 뒤
-          Stack이<br> 비었을때 하나씩 가져와서 실행하게 된다.
-    * 해결
-        * result값을 변수에 저장하려면 뒤에 .then(promise)을 하나
-          더 만든다.
-
+### Redux 라우팅 문제
+* Create 등록 요청 전에 라우팅 되는 문제
+    * 원인 & 해결 방법
+        * [원인 & 해결방법](https://blog.naver.com/ekankr2/222601191432)
     * 알게된 내용
-        * 브라우저의 동작 원리
-
-<pre>
-<code>
-// example code
-
- let temp = null;
- axios.get(`url`) 
-    .then(result => {
-        temp = result.data
-        })
-    return temp
-    }
-</code>
-</pre>
-
-
+        * Redux를 활용한 중앙 상태 관리를 통해 컴포넌트 랜더링이나 라우팅에도 활용 가능하다는 것을 알게되었음.

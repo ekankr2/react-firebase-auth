@@ -76,7 +76,6 @@ export interface Board {
 }
 
 export interface BoardState{
-    loading: boolean,
     error: string,
     submitted: boolean
 }

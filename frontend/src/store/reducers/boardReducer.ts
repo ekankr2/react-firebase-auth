@@ -2,7 +2,6 @@ import {BoardAction, BoardState, SET_ERROR, SET_SUBMITTED} from "../types";
 
 
 const initialState: BoardState = {
-    loading: false,
     error: '',
     submitted: false
 }
