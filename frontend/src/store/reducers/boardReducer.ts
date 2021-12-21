@@ -1,10 +1,10 @@
-import {BoardAction, BoardState, REGISTER_BOARD, SET_ERROR, SET_LOADING, SET_SUCCESS} from "../types";
+import {BoardAction, BoardState, REGISTER_BOARD, SET_ERROR, SET_LOADING, SET_SUBMITTED} from "../types";
 
 
 const initialState: BoardState = {
     loading: false,
     error: '',
-    success: ''
+    submitted: false
 }
 
 export default (state = initialState, action: BoardAction) => {
@@ -12,7 +12,7 @@ export default (state = initialState, action: BoardAction) => {
         case REGISTER_BOARD:
             return {
                 ...state,
-                user: action.payload
+                submitted: true
             }
         case SET_LOADING:
             return {
@@ -24,10 +24,10 @@ export default (state = initialState, action: BoardAction) => {
                 ...state,
                 error: action.payload
             }
-        case SET_SUCCESS:
+        case SET_SUBMITTED:
             return {
                 ...state,
-                success: action.payload
+                submitted: action.payload
             }
         default:
             return state

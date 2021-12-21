@@ -4,6 +4,7 @@ export const SET_LOADING = 'SET_LOADING'
 export const SET_ERROR = 'SET_ERROR'
 export const NEED_VERIFICATION = 'NEED_VERIFICATION'
 export const SET_SUCCESS = 'SET_SUCCESS'
+export const SET_SUBMITTED = 'SET_SUBMITTED'
 
 export const REGISTER_BOARD = 'REGISTER_BOARD'
 
@@ -77,7 +78,7 @@ export interface Board {
 export interface BoardState{
     loading: boolean,
     error: string,
-    success: string
+    submitted: boolean
 }
 
 export interface registerData{
@@ -85,9 +86,14 @@ export interface registerData{
     content: string,
 }
 
-export interface registerAction {
+interface registerAction {
     type: typeof REGISTER_BOARD,
     payload: Board
 }
 
-export type BoardAction = SetErrorAction | SetLoadingAction | SetSuccessAction | registerAction
+interface setSubmittedAction {
+    type: typeof SET_SUBMITTED
+    payload: boolean
+}
+
+export type BoardAction = SetErrorAction | SetLoadingAction | setSubmittedAction | registerAction

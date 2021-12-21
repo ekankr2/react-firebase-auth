@@ -20,6 +20,7 @@ const Header: FC = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>Yagada</Link>
+          <Button text="board" onClick={() => history.push('/register')} />
         </div>
 
         <div className="navbar-end">

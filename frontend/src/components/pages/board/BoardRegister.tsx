@@ -1,13 +1,16 @@
-import {FC, FormEvent, useEffect, useState} from "react";
+import React, {FC, FormEvent, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store";
 import {registerBoard, setError} from "../../../store/actions/boardActions";
 import Input from "../../UI/Input";
+import Button from "../../UI/Button";
+import {useHistory} from "react-router-dom";
 
 
 const BoardRegister: FC = () => {
+    let history = useHistory()
     const {user} = useSelector((state: RootState) => state.auth);
-    const {error, success} = useSelector((state: RootState) => state.board);
+    const {error, submitted} = useSelector((state: RootState) => state.board);
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState('')
@@ -20,6 +23,12 @@ const BoardRegister: FC = () => {
             }
         }
     }, [error, dispatch]);
+
+    useEffect(() => {
+        if(submitted){
+            history.push('/')
+        }
+    }, [submitted, history]);
 
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();
@@ -53,6 +62,7 @@ const BoardRegister: FC = () => {
                         placeholder="내용 입력"
                         label="content"
                     />
+                    <Button text={loading ? "Loading..." : "등록"} className="is-primary is-fullwidth mt-5" disabled={loading} />
                 </form>
             </div>
         </section>
