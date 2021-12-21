@@ -63,6 +63,7 @@ export const setSubmitted = (success: boolean): ThunkAction<void, RootState, nul
     }
 }
 
+// after Submit set Loading
 export const submitLoading = (): ThunkAction<void, RootState, null, BoardAction> => {
     return dispatch => {
         dispatch({

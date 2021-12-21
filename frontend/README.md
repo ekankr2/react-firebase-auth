@@ -1,79 +1,70 @@
-# Yagada
+# Getting Started with Create React App
 
-<p align="center">
-<img width="35%" src="https://user-images.githubusercontent.com/83811729/146662400-e6330a50-63da-42bc-9302-06b48334b894.png" title="Main" alt="Main"/>
-</p>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-```
-노동의 순간을 일기로 기록하다.
-```
+## Available Scripts
 
+In the project directory, you can run:
 
+### `npm start`
 
-##  Demo Link
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-* **Yagada: [Demo Link][Demo]**
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-[//]: # (  [Demo]: https://esvfront.web.app/)
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-##  Languages and Tools:
-<p align="center">
-<img src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" alt="Javascript" height="40" style="vertical-align:top; margin:4px">
+### `npm run build`
 
-<img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="typescript" height="40" style="vertical-align:top; margin:4px">
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-<img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="react" height="40" style="vertical-align:top; margin:4px"/>
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-<img src="https://cdn.worldvectorlogo.com/logos/firebase-1.svg" alt="firebase" height="40" style="vertical-align:top; margin:4px"/>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-</p>
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## 초기 기획
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-  [기획서](https://blog.naver.com/ekankr2/222599146960/)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-##  기능 소개
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-# Issues
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-* 공공 API CORS policy 오류
-    * [원인 & 해결방법][해결법링크]
-    * [proxy 서버 만들기][프록시링크]
+### Code Splitting
 
-[해결법링크]: https://blog.naver.com/ekankr2/222555509070
-[프록시링크]: https://blog.naver.com/ekankr2/222555499566
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-* Axios(Ajax) returns nothing
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-    * 원인
-        * Axios(Ajax) 요청은 promise 이다.
-        * 브라우저는 연산이 쉬운 코드를 Stack 영역에서 먼저 실행하고,
-        * 어려운 코드(Promise, Web API 등)는 Queue영역에 저장한 뒤
-          Stack이<br> 비었을때 하나씩 가져와서 실행하게 된다.
-    * 해결
-        * result값을 변수에 저장하려면 뒤에 .then(promise)을 하나
-          더 만든다.
+### Making a Progressive Web App
 
-    * 알게된 내용
-        * 브라우저의 동작 원리
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-<pre>
-<code>
-// example code
+### Advanced Configuration
 
- let temp = null;
- axios.get(`url`) 
-    .then(result => {
-        temp = result.data
-        })
-    return temp
-    }
-</code>
-</pre>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
