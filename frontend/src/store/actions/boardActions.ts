@@ -22,8 +22,10 @@ export const registerBoard = (data: registerData, user: User, onError: () => voi
                 author: user.id,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp()
             };
+            dispatch(setLoading(true))
             await firebase.firestore().collection('board').add(boardData);
             dispatch(setSubmitted(true))
+            dispatch(setLoading(false))
             dispatch(setSubmitted(false))
         } catch (err: any) {
             console.log(err)

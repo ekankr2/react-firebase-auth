@@ -1,4 +1,4 @@
-import {BoardAction, BoardState, SET_ERROR, SET_LOADING, SET_SUBMITTED} from "../types";
+import {BoardAction, BoardState, SET_ERROR, SET_SUBMITTED} from "../types";
 
 
 const initialState: BoardState = {
@@ -9,11 +9,6 @@ const initialState: BoardState = {
 
 export default (state = initialState, action: BoardAction) => {
     switch (action.type) {
-        case SET_LOADING:
-            return {
-                ...state,
-                loading: action.payload
-            }
         case SET_ERROR:
             return {
                 ...state,
