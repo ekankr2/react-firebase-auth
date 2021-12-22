@@ -92,7 +92,8 @@ export interface Board {
 }
 
 export interface BoardState{
-    submitted: boolean
+    boardList: []
+    board: Board | null
 }
 
 export interface registerData{

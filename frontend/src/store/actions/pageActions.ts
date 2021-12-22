@@ -1,6 +1,6 @@
 import {ThunkAction} from "redux-thunk";
 import {RootState} from "../index";
-import {AuthAction, BoardAction, PageAction, SET_ERROR, SET_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
+import {PageAction, SET_ERROR, SET_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
 
 // Set loading
 export const setLoading = (value: boolean): ThunkAction<void, RootState, null, PageAction> => {
