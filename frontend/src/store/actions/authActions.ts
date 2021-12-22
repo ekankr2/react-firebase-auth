@@ -1,8 +1,9 @@
 import { ThunkAction } from 'redux-thunk';
 
-import { SignUpData, AuthAction, SET_USER, User, SET_LOADING, SIGN_OUT, SignInData, SET_ERROR, NEED_VERIFICATION, SET_SUCCESS } from '../types';
+import {SignUpData, AuthAction, SET_USER, User, SIGN_OUT, SignInData, NEED_VERIFICATION, SET_ERROR} from '../types';
 import { RootState } from '..';
 import firebase from '../../firebase/config';
+import {setError, setLoading, setSuccess} from "./pageActions";
 
 // Create user
 export const signup = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
@@ -29,10 +30,7 @@ export const signup = (data: SignUpData, onError: () => void): ThunkAction<void,
         } catch (err: any) {
             console.log(err);
             onError();
-            dispatch({
-                type: SET_ERROR,
-                payload: err.message
-            });
+            dispatch(setError(err.message))
         }
     }
 }
@@ -52,16 +50,6 @@ export const getUserById = (id: string): ThunkAction<void, RootState, null, Auth
         } catch (err) {
             console.log(err);
         }
-    }
-}
-
-// Set loading
-export const setLoading = (value: boolean): ThunkAction<void, RootState, null, AuthAction> => {
-    return dispatch => {
-        dispatch({
-            type: SET_LOADING,
-            payload: value
-        });
     }
 }
 
@@ -94,31 +82,11 @@ export const signout = (): ThunkAction<void, RootState, null, AuthAction> => {
     }
 }
 
-// Set error
-export const setError = (msg: string): ThunkAction<void, RootState, null, AuthAction> => {
-    return dispatch => {
-        dispatch({
-            type: SET_ERROR,
-            payload: msg
-        });
-    }
-}
-
 // Set need verification
 export const setNeedVerification = (): ThunkAction<void, RootState, null, AuthAction> => {
     return dispatch => {
         dispatch({
             type: NEED_VERIFICATION
-        });
-    }
-}
-
-// Set success
-export const setSuccess = (msg: string): ThunkAction<void, RootState, null, AuthAction> => {
-    return dispatch => {
-        dispatch({
-            type: SET_SUCCESS,
-            payload: msg
         });
     }
 }

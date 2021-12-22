@@ -1,18 +1,19 @@
 import React, {FC, FormEvent, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store";
-import {registerBoard, setError} from "../../../store/actions/boardActions";
+import {registerBoard} from "../../../store/actions/boardActions";
 import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 import {useHistory} from "react-router-dom";
 import Textarea from "../../UI/Textarea";
 import Message from "../../UI/Message";
+import {setError} from "../../../store/actions/pageActions";
 
 
 const BoardRegister: FC = () => {
     let history = useHistory()
     const {user} = useSelector((state: RootState) => state.auth);
-    const {error, submitted} = useSelector((state: RootState) => state.board);
+    const {error, submitted} = useSelector((state: RootState) => state.page);
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState('')

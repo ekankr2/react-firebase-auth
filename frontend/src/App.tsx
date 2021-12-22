@@ -13,13 +13,14 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import PublicRoute from './components/auth/PublicRoute';
 import Loader from './components/UI/Loader';
 import firebase from './firebase/config';
-import { getUserById, setLoading, setNeedVerification } from './store/actions/authActions';
+import { getUserById, setNeedVerification } from './store/actions/authActions';
 import { RootState } from './store';
 import BoardRegister from "./components/pages/board/BoardRegister";
+import {setLoading} from "./store/actions/pageActions";
 
 const App: FC = () => {
     const dispatch = useDispatch();
-    const { loading } = useSelector((state: RootState) => state.auth);
+    const { loading } = useSelector((state: RootState) => state.page);
 
     // Check if user exists
     useEffect(() => {

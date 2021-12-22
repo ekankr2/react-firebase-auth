@@ -48,10 +48,7 @@ export interface User {
 export interface AuthState {
     user: User | null
     authenticated: boolean
-    loading: boolean
-    error: string
     needVerification: boolean
-    success: string
 }
 
 export interface SignUpData {

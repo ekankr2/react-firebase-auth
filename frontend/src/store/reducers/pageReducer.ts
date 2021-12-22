@@ -29,5 +29,7 @@ export default (state = initialState, action: PageAction) => {
                 ...state,
                 submitted: action.payload
             }
+        default:
+            return state
     }
 }

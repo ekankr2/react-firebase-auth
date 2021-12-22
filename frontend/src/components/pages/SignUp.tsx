@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
 import Message from '../UI/Message';
-import { signup, setError } from '../../store/actions/authActions';
+import { signup } from '../../store/actions/authActions';
+
 import { RootState } from '../../store';
+import {setError} from "../../store/actions/pageActions";
 
 const SignUp: FC = () => {
   const [firstName, setFirstName] = useState('');
@@ -13,7 +15,7 @@ const SignUp: FC = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { error } = useSelector((state: RootState) => state.auth);
+  const { error } = useSelector((state: RootState) => state.page);
 
   useEffect(() => {
     return () => {

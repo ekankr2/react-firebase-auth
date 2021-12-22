@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
 import Message from '../UI/Message';
-import { signin, setError } from '../../store/actions/authActions';
+import { signin } from '../../store/actions/authActions';
 import { RootState } from '../../store';
+import {setError} from "../../store/actions/pageActions";
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { error } = useSelector((state: RootState) => state.auth);
+  const { error } = useSelector((state: RootState) => state.page);
 
   useEffect(() => {
     return () => {

@@ -2,11 +2,12 @@ import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Message from '../UI/Message';
-import { setSuccess } from '../../store/actions/authActions';
 import { RootState } from '../../store';
+import {setSuccess} from "../../store/actions/pageActions";
 
 const Dashboard: FC = () => {
-  const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
+  const { user, needVerification } = useSelector((state: RootState) => state.auth);
+  const { success } = useSelector((state: RootState) => state.page);
   const dispatch = useDispatch();
 
   useEffect(() => {
