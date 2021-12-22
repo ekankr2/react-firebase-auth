@@ -5,6 +5,7 @@ import {registerBoard, setError} from "../../../store/actions/boardActions";
 import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 import {useHistory} from "react-router-dom";
+import Textarea from "../../UI/Textarea";
 
 
 const BoardRegister: FC = () => {
@@ -51,15 +52,14 @@ const BoardRegister: FC = () => {
                         name="title"
                         value={title}
                         onChange={(e)=> setTitle(e.currentTarget.value)}
-                        placeholder="제목 입력"
+                        placeholder="Title here"
                         label="title"
                     />
-                    <Input
-                        type="text"
+                    <Textarea
                         name="content"
                         value={content}
                         onChange={(e)=> setContent(e.currentTarget.value)}
-                        placeholder="내용 입력"
+                        placeholder="Content here"
                         label="content"
                     />
                     <Button text={loading ? "Loading..." : "등록"} className="is-primary is-fullwidth mt-5" disabled={loading} />
