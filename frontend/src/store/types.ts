@@ -6,8 +6,38 @@ export const NEED_VERIFICATION = 'NEED_VERIFICATION'
 export const SET_SUCCESS = 'SET_SUCCESS'
 export const SET_SUBMITTED = 'SET_SUBMITTED'
 
-export const REGISTER_BOARD = 'REGISTER_BOARD'
+// Page State
+export interface PageState {
+    loading: boolean
+    error: string
+    success: string
+    submitted: boolean
+}
 
+// Page Actions
+interface SetLoadingAction {
+    type: typeof SET_LOADING
+    payload: boolean
+}
+
+interface SetSuccessAction {
+    type: typeof SET_SUCCESS
+    payload: string
+}
+
+interface SetErrorAction {
+    type: typeof SET_ERROR
+    payload: string
+}
+
+interface setSubmittedAction {
+    type: typeof SET_SUBMITTED
+    payload: boolean
+}
+
+export type PageAction = SetLoadingAction | SetErrorAction | SetSuccessAction | setSubmittedAction
+
+// Auth Types
 export interface User {
     firstName: string
     email: string
@@ -35,39 +65,25 @@ export interface SignInData {
     password: string
 }
 
-// Actions
+// Auth Actions
 interface SetUserAction {
     type: typeof SET_USER
     payload: User
 }
 
-interface SetLoadingAction {
-    type: typeof SET_LOADING
-    payload: boolean
-}
+
 
 interface SignOutAction {
     type: typeof SIGN_OUT
-}
-
-interface SetErrorAction {
-    type: typeof SET_ERROR
-    payload: string
 }
 
 interface NeedVerificationAction {
     type: typeof NEED_VERIFICATION
 }
 
-interface SetSuccessAction {
-    type: typeof SET_SUCCESS
-    payload: string
-}
+export type AuthAction = SetUserAction | SetLoadingAction | SignOutAction | SetErrorAction | NeedVerificationAction | SetSuccessAction;
 
-export type AuthAction = SetUserAction | SetLoadingAction | SignOutAction | SetErrorAction | NeedVerificationAction |
-    SetSuccessAction;
 
-// board actions
 export interface Board {
     title: string,
     content: string,
@@ -76,7 +92,6 @@ export interface Board {
 }
 
 export interface BoardState{
-    error: string,
     submitted: boolean
 }
 
@@ -85,9 +100,6 @@ export interface registerData{
     content: string,
 }
 
-interface setSubmittedAction {
-    type: typeof SET_SUBMITTED
-    payload: boolean
-}
+// board actions
 
 export type BoardAction = SetErrorAction | SetLoadingAction | setSubmittedAction

@@ -6,6 +6,7 @@ import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 import {useHistory} from "react-router-dom";
 import Textarea from "../../UI/Textarea";
+import Message from "../../UI/Message";
 
 
 const BoardRegister: FC = () => {
@@ -47,6 +48,7 @@ const BoardRegister: FC = () => {
             <div className="container">
                 <h2 className="has-text-centered is-size-2 mb-3">Register</h2>
                 <form className="form" onSubmit={submitHandler}>
+                    {error && <Message type="danger" msg={error} />}
                     <Input
                         type="text"
                         name="title"
@@ -56,6 +58,7 @@ const BoardRegister: FC = () => {
                         label="title"
                     />
                     <Textarea
+                        className="is-primary is-medium"
                         name="content"
                         value={content}
                         onChange={(e)=> setContent(e.currentTarget.value)}

@@ -2,17 +2,11 @@ import {BoardAction, BoardState, SET_ERROR, SET_SUBMITTED} from "../types";
 
 
 const initialState: BoardState = {
-    error: '',
     submitted: false
 }
 
 export default (state = initialState, action: BoardAction) => {
     switch (action.type) {
-        case SET_ERROR:
-            return {
-                ...state,
-                error: action.payload
-            }
         case SET_SUBMITTED:
             return {
                 ...state,
