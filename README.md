@@ -1,16 +1,12 @@
 # React-ts-Firebase-CRUD
 
 ```
-a template for Firebase Auth and CRUD with React-ts
+a template for Firebase Auth, CRUD with React-ts
 ```
 
 ## Table of Contents
 
-<!-- To update this table of contents, ensure you have run `npm install` then `npm run doctoc` -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Getting started](#Getting-started)
+- [Getting started](#Getting started)
 - [Tech Stack](#tech-stack)
     - [Languages](#Languages)
     - [Core](#core)
@@ -56,23 +52,17 @@ Then run `npm i` inside project root folder and after that `npm start`
 
 ##  Demo
 
-* **Demo: [Demo Link][Demo]**
+* **Demo: [Demo Link][Planning...]**
 
 [//]: # (  [Demo]: https://esvfront.web.app/)
 
 ## Documentation
-
+<!--
 <ul>
   <li><a href="https://docs.react-firebase.com/">Introduction</a></li>
     <li><a href="https://docs.react-firebase.com/getting-started">Getting Started</a></li>
-    <li><a href="https://docs.react-firebase.com/getting-started#react-frontend">React Frontend</a></li>
-    <li><a href="https://docs.react-firebase.com/getting-started/cloud-functions">Cloud Functions</a></li>
-    <li><a href="https://docs.react-firebase.com/getting-started/continuous-integration-deployment">CI/CD</a></li>
-    <li><a href="https://docs.react-firebase.com/features/database-interface">Database Selection</a></li>
-    <li><a href="https://docs.react-firebase.com/features/internationalization">Internationalization</a></li>
-    <li><a href="https://docs.react-firebase.com/features/file-upload">File Upload</a></li>
-    <li><a href="https://docs.react-firebase.com/features/social-media-authentication">Social Media Authentication</a></li>
 </ul>
+-->
 
 ## Contributors
 
