@@ -1,7 +1,7 @@
 # React-ts-Firebase-CRUD
 
 ```
-a template for Firebase Auth, CRUD with React-ts
+a template for Firebase Auth and CRUD with React-ts
 ```
 
 ## Table of Contents
@@ -10,7 +10,7 @@ a template for Firebase Auth, CRUD with React-ts
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Getting started](#Getting started)
+- [Getting started](#Getting-started)
 - [Tech Stack](#tech-stack)
     - [Languages](#Languages)
     - [Core](#core)
