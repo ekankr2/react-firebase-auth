@@ -1,7 +1,7 @@
 # React-ts-Firebase-CRUD
 
 ```
-a template for Firebase Auth, CRUD with React-ts
+React ⚛️ Typescript starter kit with Firebase 🔥 and Bulma for setting up auth and CRUD template
 ```
 
 ## Table of Contents
