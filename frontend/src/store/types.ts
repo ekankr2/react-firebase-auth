@@ -1,6 +1,7 @@
 export const SET_USER = 'SET_USER'
 export const SIGN_OUT = 'SIGN_OUt'
-export const SET_LOADING = 'SET_LOADING'
+export const START_LOADING = 'START_LOADING'
+export const END_LOADING = 'END_LOADING'
 export const SET_ERROR = 'SET_ERROR'
 export const NEED_VERIFICATION = 'NEED_VERIFICATION'
 export const SET_SUCCESS = 'SET_SUCCESS'
@@ -15,9 +16,12 @@ export interface PageState {
 }
 
 // Page Actions
-interface SetLoadingAction {
-    type: typeof SET_LOADING
-    payload: boolean
+interface StartLoadingAction {
+    type: typeof START_LOADING
+}
+
+interface EndLoadingAction {
+    type: typeof END_LOADING
 }
 
 interface SetSuccessAction {
@@ -35,7 +39,7 @@ interface setSubmittedAction {
     payload: boolean
 }
 
-export type PageAction = SetLoadingAction | SetErrorAction | SetSuccessAction | setSubmittedAction
+export type PageAction = StartLoadingAction | EndLoadingAction | SetErrorAction | SetSuccessAction | setSubmittedAction
 
 // Auth Types
 export interface User {
@@ -78,7 +82,7 @@ interface NeedVerificationAction {
     type: typeof NEED_VERIFICATION
 }
 
-export type AuthAction = SetUserAction | SetLoadingAction | SignOutAction | SetErrorAction | NeedVerificationAction | SetSuccessAction;
+export type AuthAction = SetUserAction | SignOutAction | SetErrorAction | NeedVerificationAction | SetSuccessAction;
 
 
 export interface Board {
@@ -100,4 +104,4 @@ export interface registerData{
 
 // board actions
 
-export type BoardAction = SetErrorAction | SetLoadingAction | setSubmittedAction
+export type BoardAction = SetErrorAction | setSubmittedAction

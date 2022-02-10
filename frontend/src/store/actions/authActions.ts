@@ -3,7 +3,7 @@ import { ThunkAction } from 'redux-thunk';
 import {SignUpData, AuthAction, SET_USER, User, SIGN_OUT, SignInData, NEED_VERIFICATION, SET_ERROR} from '../types';
 import { RootState } from '..';
 import firebase from '../../firebase/config';
-import {setError, setLoading, setSuccess} from "./pageActions";
+import {endLoading, setError, setSuccess, startLoading} from "./pageActions";
 
 // Create user
 export const signup = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
@@ -70,14 +70,14 @@ export const signin = (data: SignInData, onError: () => void): ThunkAction<void,
 export const signout = (): ThunkAction<void, RootState, null, AuthAction> => {
     return async dispatch => {
         try {
-            dispatch(setLoading(true));
+            dispatch(startLoading);
             await firebase.auth().signOut();
             dispatch({
                 type: SIGN_OUT
             });
         } catch (err) {
             console.log(err);
-            dispatch(setLoading(false));
+            dispatch(endLoading);
         }
     }
 }

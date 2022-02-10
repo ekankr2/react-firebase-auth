@@ -1,4 +1,4 @@
-import {PageAction, PageState, SET_ERROR, SET_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
+import {PageAction, PageState, SET_ERROR, START_LOADING, END_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
 
 const initialState: PageState = {
     loading: false,
@@ -7,12 +7,17 @@ const initialState: PageState = {
     submitted: false
 }
 
-export default (state = initialState, action: PageAction) => {
+const pageReducer = (state = initialState, action: PageAction) => {
     switch(action.type) {
-        case SET_LOADING:
+        case START_LOADING:
             return {
                 ...state,
-                loading: action.payload
+                loading: true
+            }
+        case END_LOADING:
+            return {
+                ...state,
+                loading: false
             }
         case SET_ERROR:
             return {
@@ -33,3 +38,5 @@ export default (state = initialState, action: PageAction) => {
             return state
     }
 }
+
+export default pageReducer

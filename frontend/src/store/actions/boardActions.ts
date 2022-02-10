@@ -8,7 +8,7 @@ import {
     User
 } from "../types";
 import {RootState} from "../index";
-import {setError, setLoading, submitLoading} from "./pageActions";
+import {setError, startLoading, submitLoading} from "./pageActions";
 
 export const registerBoard = (data: registerData, user: User, onError: () => void): ThunkAction<void, RootState, null, BoardAction> => {
     return async dispatch => {
@@ -19,7 +19,7 @@ export const registerBoard = (data: registerData, user: User, onError: () => voi
                 author: user.id,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp()
             };
-            dispatch(setLoading(true))
+            dispatch(startLoading)
             await firebase.firestore().collection('board').add(boardData);
             dispatch(submitLoading())
         } catch (err: any) {

@@ -1,14 +1,17 @@
 import {ThunkAction} from "redux-thunk";
 import {RootState} from "../index";
-import {PageAction, SET_ERROR, SET_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
+import {PageAction, SET_ERROR, START_LOADING, END_LOADING, SET_SUBMITTED, SET_SUCCESS} from "../types";
 
 // Set loading
-export const setLoading = (value: boolean): ThunkAction<void, RootState, null, PageAction> => {
-    return dispatch => {
-        dispatch({
-            type: SET_LOADING,
-            payload: value
-        });
+export const startLoading = (): PageAction => {
+    return {
+        type: START_LOADING
+    }
+}
+
+export const endLoading = (): PageAction => {
+    return {
+        type: END_LOADING
     }
 }
 
@@ -50,8 +53,7 @@ export const submitLoading = (): ThunkAction<void, RootState, null, PageAction> 
             payload: true
         });
         dispatch({
-            type: SET_LOADING,
-            payload: false
+            type: END_LOADING,
         });
         dispatch({
             type: SET_SUBMITTED,
