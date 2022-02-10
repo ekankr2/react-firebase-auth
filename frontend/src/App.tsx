@@ -1,6 +1,6 @@
 import React, { FC, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/sections/Header';
@@ -49,7 +49,6 @@ const App: FC = () => {
 
     return (
         <>
-        <BrowserRouter>
             <Header />
             <Suspense fallback={<Loader/>}>
             <Switch>
@@ -61,7 +60,6 @@ const App: FC = () => {
                 <PrivateRoute path="/register" component={BoardRegister} exact />
             </Switch>
             </Suspense>
-        </BrowserRouter>
         </>
     );
 }

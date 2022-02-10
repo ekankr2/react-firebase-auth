@@ -12,7 +12,8 @@ const PrivateRoute: FC<Props> = ({ component: Component, ...rest }) => {
   const { authenticated } = useSelector((state: RootState) => state.auth);
 
   return(
-    <Route {...rest} render={props => authenticated ? <Component {...props} /> : <Redirect to="/signin" />} />
+    <Route {...rest} render={props => authenticated ? <Component {...props} /> :
+     <Redirect to={{pathname:"/signin", state: { next: props.location.pathname } }} />} />
   );
 }
 
