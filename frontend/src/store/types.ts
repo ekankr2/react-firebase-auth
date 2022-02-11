@@ -6,6 +6,7 @@ export const SET_ERROR = 'SET_ERROR'
 export const NEED_VERIFICATION = 'NEED_VERIFICATION'
 export const SET_SUCCESS = 'SET_SUCCESS'
 export const SET_SUBMITTED = 'SET_SUBMITTED'
+export const FETCH_BOARD = 'FETCH_BOARD'
 
 // Page State
 export interface PageState {
@@ -93,7 +94,7 @@ export interface Board {
 }
 
 export interface BoardState{
-    boardList: []
+    boardList: Board[] | null
     board: Board | null
 }
 
@@ -103,5 +104,9 @@ export interface registerData{
 }
 
 // board actions
+interface fetchBoardAction{
+    type: typeof FETCH_BOARD
+    payload: Board
+}
 
-export type BoardAction = SetErrorAction | setSubmittedAction
+export type BoardAction = fetchBoardAction

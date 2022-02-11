@@ -16,7 +16,7 @@ const PublicRoute: FC<Props> = ({ component: Component, ...rest }) => {
   return(
     //@ts-ignore
     <Route {...rest} render={props => !authenticated ? <Component {...props} /> :
-        location.state ? <Redirect to={location.state.next}/> : history.goBack()} />
+        <Redirect to="/dashboard" />} />
   );
 }
 

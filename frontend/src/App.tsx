@@ -1,6 +1,6 @@
 import React, { FC, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
 import Header from './components/sections/Header';
@@ -12,13 +12,13 @@ import { getUserById, setNeedVerification } from './store/actions/authActions';
 import { RootState } from './store';
 import BoardRegister from "./components/pages/board/BoardRegister";
 import {startLoading, endLoading} from "./store/actions/pageActions";
+import PrivateRoute from "./components/auth/PrivateRoute";
+import PublicRoute from "./components/auth/PublicRoute";
 
 const SignIn = React.lazy(()=> import('./components/pages/SignIn'))
 const SignUp = React.lazy(()=> import('./components/pages/SignUp'))
 const Homepage = React.lazy(()=> import('./components/pages/Homepage'))
 const Dashboard = React.lazy(()=> import('./components/pages/Dashboard'))
-const PrivateRoute = React.lazy(()=> import('./components/auth/PrivateRoute'))
-const PublicRoute = React.lazy(()=> import('./components/auth/PublicRoute'))
 
 const App: FC = () => {
     const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const App: FC = () => {
             <Header />
             <Suspense fallback={<Loader/>}>
             <Switch>
-                <PublicRoute path="/" component={Homepage} exact />
+                <Route path="/" component={Homepage} exact />
                 <PublicRoute path="/signup" component={SignUp} exact />
                 <PublicRoute path="/signin" component={SignIn} exact />
                 <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
