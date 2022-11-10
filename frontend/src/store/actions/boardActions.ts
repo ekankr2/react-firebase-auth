@@ -30,12 +30,12 @@ export const registerBoard = (data: registerData, user: User, onError: () => voi
     }
 }
 
-export const fetchBoard = (data: registerData, user: User, onError: () => void): ThunkAction<void, RootState, null, BoardAction> => {
-    return async dispatch => {
-        try {
-
-        }
-    }
-}
+// export const fetchBoard = (data: registerData, user: User, onError: () => void): ThunkAction<void, RootState, null, BoardAction> => {
+//     return async dispatch => {
+//         try {
+//
+//         }
+//     }
+// }
 
 
