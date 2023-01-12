@@ -1,12 +1,12 @@
-# React-Firebase-CRUD
+# React-Firebase-AUTH
 
 ```
-React ⚛️ Typescript starter kit with Firebase 🔥 and Bulma for setting up auth and CRUD template
+React ⚛️ Typescript starter kit with Firebase 🔥 and Bulma for setting up auth
 ```
 
 ## Table of Contents
 
-- [Getting started](#Getting started)
+- [Getting started](#getting-started)
 - [Tech Stack](#tech-stack)
     - [Languages](#Languages)
     - [Core](#core)
@@ -49,26 +49,6 @@ Then run `npm i` inside project root folder and after that `npm start`
 - [React-router](https://github.com/ReactTraining/react-router) (★ 39.6k) declarative routing for React.
 - [Firebase](https://firebase.google.com/) for serverless architecture - CDN Hosting, Realtime Database, Authentication, Storage and Cloud Functions (see [docs](https://firebase.google.com/docs/web)).
 - [cross-env](https://github.com/kentcdodds/cross-env) (★ 4.9k) run scripts that set and use environment variables across platforms (see [docs](https://www.npmjs.com/package/cross-env)).
-
-##  Demo
-
-* **Demo: [Demo Link][Planning...]**
-
-[//]: # (  [Demo]: https://esvfront.web.app/)
-
-## Documentation
-<!--
-<ul>
-  <li><a href="https://docs.react-firebase.com/">Introduction</a></li>
-    <li><a href="https://docs.react-firebase.com/getting-started">Getting Started</a></li>
-</ul>
--->
-
-## Contributors
-
-<ul>
-  <li><a href="https://github.com/ekankr2">Ikhwan Im</a></li>
-</ul>
 
 ## Issues
 
